@@ -1,0 +1,4 @@
+use Exercici4;
+select client.idclient, client.DNI AS client_DNI, client.nom AS client_nom, client.cognoms AS client_cognoms, client.adreça, vendor.idvendor, vendor.DNI AS vendor_DNI, vendor.nom AS vendor_nom, vendor.cognoms AS vendor_cognoms, polissa.idpolissa, polissa.numero_polissa, polissa.tipus_polissa_id, polissa.client_DNI, polissa.preu_anula, polissa.tipus_pagament, polissa.data_contratacio, polissa.data_inici_vigenci, polissa.data_final_vigenci, polissa.vendor_idvendor, tipus_polissa.nom AS tipus_polissa_nom, tipus_polissa.descripcio AS tipus_polissa_descripcio, tipus_polissa.polissa AS tipus_polissa_polissa
+from client JOIN polissa ON client.DNI = polissa.client_DNI JOIN vendor ON polissa.vendor_idvendor = vendor.idvendor JOIN tipus_polissa ON polissa.tipus_polissa_id = tipus_polissa.id
+where client.DNI IS NOT NULL AND vendor.DNI IS NOT NULL AND polissa.numero_polissa IS NOT NULL;
