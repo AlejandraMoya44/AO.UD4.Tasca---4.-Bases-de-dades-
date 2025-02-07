@@ -1,0 +1,1 @@
+SELECT * FROM `Exercici.7`.`Linia ticket`;
